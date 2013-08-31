@@ -35,7 +35,6 @@ begin
     end
 
     def test_forceful_questions
-      skip
       assert_equal 'Woah, chill out!', teenager.hey('WHAT THE HELL WERE YOU THINKING?')
     end
 

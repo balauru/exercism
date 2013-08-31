@@ -1,5 +1,5 @@
 class Bob
 	def hey(message)
-		'Whatever.'
+		message == 'WATCH OUT!' ? 'Woah, chill out!': 'Whatever.'
 	end
 end

@@ -39,7 +39,6 @@ begin
     end
 
     def test_shouting_numbers
-      skip
       assert_equal 'Woah, chill out!', teenager.hey('1, 2, 3 GO!')
     end
 

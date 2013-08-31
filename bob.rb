@@ -1,12 +1,30 @@
 class Bob
-	REPLIES = {
-		'WATCH OUT!' => 'Woah, chill out!',
-		'WHAT THE HELL WERE YOU THINKING?' => 'Woah, chill out!',
-		'Does this cryogenic chamber make me look fat?' => 'Sure.',
-		'You are, what, like 15?' => 'Sure.'
-	}
+	class ReplicaFactory
+		PARSERS = [
+			->(statement) {'Woah, chill out!' if statement == statement.upcase},
+			->(statement) {'Sure.' if statement.end_with?('?')},
+			->(statement) {'Whatever.'}
+		]
+
+		def self.reply(statement)
+			ReplicaFactory.new(statement).reply
+		end
+
+		attr_reader :statement
+
+		def initialize(statement)
+			@statement = statement
+		end
+
+		def reply
+			PARSERS.each do |p|
+				replica = p.call(@statement)
+				break(replica) if replica
+			end
+		end
+	end
 
 	def hey(message)
-		REPLIES.has_key?(message) ? REPLIES[message] : 'Whatever.'
+		ReplicaFactory.reply(message)		
 	end
 end

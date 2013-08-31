@@ -23,7 +23,6 @@ begin
     end
 
     def test_asking_a_numeric_question
-      skip
       assert_equal 'Sure.', teenager.hey('You are, what, like 15?')
     end
 

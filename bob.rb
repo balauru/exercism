@@ -1,7 +1,8 @@
 class Bob
 	REPLIES = {
 		'WATCH OUT!' => 'Woah, chill out!',
-		'Does this cryogenic chamber make me look fat?' => 'Sure.'
+		'Does this cryogenic chamber make me look fat?' => 'Sure.',
+		'You are, what, like 15?' => 'Sure.'
 	}
 
 	def hey(message)

@@ -31,7 +31,6 @@ begin
     end
 
     def test_using_acronyms_in_regular_speech
-      skip
       assert_equal 'Whatever.', teenager.hey("It's OK if you don't want to go to the DMV.")
     end
 

@@ -1,6 +1,7 @@
 class Bob
 	class ReplicaFactory
 		PARSERS = [
+			->(statement) {'Fine. Be that way!' if statement.empty? },
 			->(statement) {'Woah, chill out!' if statement == statement.upcase},
 			->(statement) {'Sure.' if statement.end_with?('?')},
 			->(statement) {'Whatever.'}
